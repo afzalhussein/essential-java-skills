@@ -1,3 +1,4 @@
+package foundation;
 public class Lesson5 {
     public static void main(String[] args) {
         System.out.println("How to work with the order of precedence in Java?");

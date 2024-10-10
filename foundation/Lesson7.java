@@ -1,3 +1,4 @@
+package foundation;
 import java.text.NumberFormat;
 
 public class Lesson7 {

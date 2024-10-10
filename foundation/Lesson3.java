@@ -1,3 +1,4 @@
+package foundation;
 public class Lesson3 {
     public static void main(String[] args) {
         System.out.println("How to code assignment statements and arithmetic expressesions in Java?");

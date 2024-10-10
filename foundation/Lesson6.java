@@ -1,3 +1,4 @@
+package foundation;
 public class Lesson6 {
     public static void main(String[] args) {
         System.out.println("How to work with casting in Java?");
