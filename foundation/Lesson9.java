@@ -66,6 +66,7 @@ public class Lesson9 {
         @SuppressWarnings("deprecation")
         Integer quantityIntegerObject = new Integer(123); // 123 deprecated
         System.out.println("quantityIntegerObject: " + quantityIntegerObject);
+        @SuppressWarnings("deprecation")
         Double priceDoubleObject = new Double(123.45); // 123.45 deprecated
         System.out.println("priceDoubleObject: " + priceDoubleObject);
     }
