@@ -14,7 +14,8 @@ public class InvoiceApp {
             double discountPercent = 0;
             if (subtotal > 100) {
                 discountPercent = 0.1;
-            } else discountPercent = 0;
+            } else
+                discountPercent = 0;
 
             double discountAmount = subtotal * discountPercent;
             double totalBeforeTax = subtotal - discountAmount;
@@ -25,7 +26,16 @@ public class InvoiceApp {
             NumberFormat currency = NumberFormat.getCurrencyInstance();
             NumberFormat percent = NumberFormat.getPercentInstance();
 
-            String message = "Discount percent: " + percent.format(discountPercent) + "\n" +
+            String debuString = "Unformatted: \n" + "subtotal: " + (subtotal) + "\n" +
+                    "discountPercent: " + (discountPercent) + "\n" +
+                    "discountAmount: " + (discountAmount) + "\n" +
+                    "totalBeforeTax: " + (totalBeforeTax) + "\n" +
+                    "salesTax: " + (salesTax) + "\n" +
+                    "total: " + (total);
+
+            System.out.println(debuString);
+
+            String message = "Formatted: \n" + "Discount percent: " + percent.format(discountPercent) + "\n" +
                     "Discount amount: " + currency.format(discountAmount) + "\n" +
                     "Total before tax: " + currency.format(totalBeforeTax) + "\n" +
                     "Sales tax: " + currency.format(salesTax) + "\n" +
@@ -34,6 +44,8 @@ public class InvoiceApp {
 
             System.out.print("Continue? (y/n): ");
             choice = sc.next();
+
+            System.out.println();
         }
     }
 }
