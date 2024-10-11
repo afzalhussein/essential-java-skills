@@ -3,7 +3,21 @@ package foundation;
 public class Lesson9 {
     public static void main(String[] args) {
         System.out.println("How to use the Integer and Double classes in Java?");
-
+        /**
+         * @description: The Integer and Double classes are known as wrapper classeses
+         *               since they can be used to construct Integer and Double objects
+         *               that contain (wrap around) int and double values. This can be
+         *               useful when you need to pass an int or double value to a method
+         *               that only accepts objects, not primitive data types. The
+         *               Integer and Double classes also provide static methods that you
+         *               can use for converting values from these data types to strings
+         *               and vice versa. If the parseInt and parseDouble methods can't
+         *               successfully parse the string, they will cause an error to
+         *               occur. In Java terminology, this is known as a throwing an
+         *               exception. So you handle or catch exception. Every primitive
+         *               type has a wrapper class that works like the Integer and Double
+         *               Classes.
+         */
         demo();
     }
 
