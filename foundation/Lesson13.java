@@ -10,6 +10,33 @@ public class Lesson13 {
         example2("hm01");
         example2("bn03");
         example2("banana");
+        example3(1);
+        example3(2);
+        example3(3);
+        example3(4);
+        example3(5);
+        example3(6);
+        example3(7);
+        example3(8);
+    }
+
+    private static void example3(int dayOfWeek) {
+        switch(dayOfWeek) {
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+                System.out.println("Weekday");
+                break;
+            case 1:
+            case 7:
+                System.out.println("Weekend");
+                break;
+            default:
+                System.out.println("Invalid day");
+                break;
+        }
     }
 
     private static void example2(String productCode) {
