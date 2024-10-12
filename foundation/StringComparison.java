@@ -37,6 +37,10 @@ public class StringComparison {
      *           equalsIgnoreCase(string) to compare two string values. For null
      *           values use == and != as equals or ignoreCase will return false even
      *           if the value is null
+     * @implNote: Please note that Java stores strings in pool of memory. The
+     *            string literal is stored in pool of memory. Therefore, equality
+     *            tests of strings may not work when two string objects are assigned
+     *            the same literal value.
      */
     private static void example0() {
         System.out.println("How to compare two string values in Java?");
