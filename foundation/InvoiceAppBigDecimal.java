@@ -45,6 +45,11 @@ public class InvoiceAppBigDecimal {
                         total, currency, percent);
                 System.out.print("Continue? ");
                 choice = sc.next();
+                while (choice.equalsIgnoreCase("y") == false && choice.equalsIgnoreCase("n") == false) {
+                    System.out.print("Enter y or n: ");
+                    choice = sc.next();
+                }
+                System.out.println();
             }
         }
     }
