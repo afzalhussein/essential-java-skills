@@ -7,6 +7,23 @@ public class Lesson13 {
         example0(0);
         example1('A');
         example1('B');
+        example2("hm01");
+        example2("bn03");
+        example2("banana");
+    }
+
+    private static void example2(String productCode) {
+        switch (productCode) {
+            case "hm01":
+                System.out.println("hm01 was pressed");
+                break;
+            case "bn03":
+                System.out.println("bn03 was pressed");
+                break;
+            default:
+                System.out.println("Product not found!");
+                break;
+        }
     }
 
     /**
