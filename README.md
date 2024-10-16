@@ -125,6 +125,9 @@ for(initializeExpression; booleanExpression; incrementDecrementExpression) { // 
 #### continue
 - continue and continue labeled work similarly to break statement, but they jump to the beginning of a loop instead of the end of the loop.
 - The unlabeled version of the statement works with the current loop, and labeled version to work with nested loops.
+- To skip the rest of the statements in the current loop and jump to the top of the current loop, you can use the continue statement.
+- To skip the rest of the statements in the current loop and jump to the top of a labeled loop, you can add a label to the lop and use the labeled continue statement.
+- To code a label, type the name of the label and a colon before a loop.
 ```java
 // syntax
 label:
