@@ -34,6 +34,23 @@ try {
 } catch (NumberFormatException e) {
     System.out.println("Error: " + e); // Error: java.lang.NumberFormatException: For input string: "123.abc"
 }
+
+// Do not forget to handle resource after usage
+Scanner sc = new Scanner(System.in);
+String choice = "y";
+while (choice.equalsIgnoreCase("y")) {
+    .....
+    choice = sc.next();
+}
+sc.close();
+
+// Do use try with resource to better handle resource closes automatically
+try(Scanner sc = new Scanner(System.in)) {
+    String choice = "y";
+    while(choice.equalsIgnoreCase("y") {
+     ...
+    }
+}
 ```
 
 
