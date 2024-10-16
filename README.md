@@ -108,6 +108,18 @@ for(initializeExpression; booleanExpression; increment/decrementExpression) {
 for(int i=0; i<5; i++) System.out.println(i);
 // All expression are visible separated by ; inside (). If necessary counter variable can be declared outside of the loop to be accessible after the loop ends as variable declared inside () or loop body between {} is only accessible inside.
 ```
+### nested loops
+```java
+for(initializeExpression; booleanExpression; incrementDecrementExpression) { // proper indentation is required for readability
+    statements;
+    do { // variables declared in outer loop are accessible here unless shadowed
+        statements;
+        while(booleanExpression_3) { // condition once untruthy shall exit the loop
+            statements;
+        }
+    } while(booleanExpression_2)
+}
+```
 
 ### switch
 #### Old
