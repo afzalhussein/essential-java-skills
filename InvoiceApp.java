@@ -26,7 +26,9 @@ public class InvoiceApp {
                 NumberFormat currency = NumberFormat.getCurrencyInstance();
                 NumberFormat percent = NumberFormat.getPercentInstance();
 
-                String debuString = "Unformatted: \n" + "subtotal: " + (subtotal) + "\n" +
+                String debuString = """
+                                    Unformatted: 
+                                    subtotal: """ + (subtotal) + "\n" +
                         "discountPercent: " + (discountPercent) + "\n" +
                         "discountAmount: " + (discountAmount) + "\n" +
                         "totalBeforeTax: " + (totalBeforeTax) + "\n" +
@@ -35,7 +37,9 @@ public class InvoiceApp {
 
                 System.out.println(debuString);
 
-                String message = "Formatted: \n" + "Discount percent: " + percent.format(discountPercent) + "\n" +
+                String message = """
+                                 Formatted: 
+                                 Discount percent: """ + percent.format(discountPercent) + "\n" +
                         "Discount amount: " + currency.format(discountAmount) + "\n" +
                         "Total before tax: " + currency.format(totalBeforeTax) + "\n" +
                         "Sales tax: " + currency.format(salesTax) + "\n" +
