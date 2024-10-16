@@ -77,19 +77,18 @@ public class Lesson9 {
 
     private static void getPriceDoubleObjectConstructor() {
         System.out.println("Constructor usage - deprecated");
-        @SuppressWarnings("deprecation")
-        Integer quantityIntegerObject = new Integer(123); // 123 deprecated
+        @SuppressWarnings({"BoxedPrimitiveConstruction"})
+        Integer quantityIntegerObject = 123;
         System.out.println("quantityIntegerObject: " + quantityIntegerObject);
-        @SuppressWarnings("deprecation")
-        Double priceDoubleObject = new Double(123.45); // 123.45 deprecated
+        Double priceDoubleObject = 123.45;
         System.out.println("priceDoubleObject: " + priceDoubleObject);
     }
 
     private static void stringToInteger() {
         System.out.println("String to integer conversion");
-        Integer quantity = Integer.parseInt("123"); // 123
-        Integer quantity2 = Integer.parseInt("123"); // 123
-        Integer quantity3 = Integer.parseInt("0123"); // 123
+        Integer quantity = Integer.valueOf("123"); // 123
+        Integer quantity2 = Integer.valueOf("123"); // 123
+        Integer quantity3 = Integer.valueOf("0123"); // 123
         System.out.println("quantity: " + quantity);
         System.out.println("quantity2: " + quantity2);
         System.out.println("quantity3: " + quantity3);
