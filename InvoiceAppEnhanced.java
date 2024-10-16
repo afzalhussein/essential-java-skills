@@ -21,27 +21,27 @@ public class InvoiceAppEnhanced {
      *               largest.
      */
     public static void invoiceApp() {
-        Scanner sc = new Scanner(System.in);
-        String choice = "y";
-        while (choice.equalsIgnoreCase("y")) {
-            String customerType = getCustomerType(sc);
-            double subtotal = getSubtotal(sc);
-            double discountPercent = getDiscountPercent(customerType, subtotal);
-            // Convert subtotal and discountPercent to BigDecimal
-            BigDecimal decimalDiscountPercent = new BigDecimal(discountPercent);
-            // Calculate discount amount
-            BigDecimal decimalSubTotal = new BigDecimal(subtotal);
-            BigDecimal discountAmount = decimalSubTotal.multiply(decimalDiscountPercent);
-            BigDecimal totalBeforeTax = decimalSubTotal.subtract(discountAmount);
-            BigDecimal salesTaxPercent = new BigDecimal(0.05);
-            BigDecimal salesTax = totalBeforeTax.multiply(salesTaxPercent);
-            BigDecimal total = totalBeforeTax.add(salesTax);
-
-            printInvoice(decimalDiscountPercent, discountAmount, totalBeforeTax, salesTaxPercent, salesTax, total);
-            System.out.print("Continue? ");
-            choice = getChoice(sc);
+        try (Scanner sc = new Scanner(System.in)) {
+            String choice = "y";
+            while (choice.equalsIgnoreCase("y")) {
+                String customerType = getCustomerType(sc);
+                double subtotal = getSubtotal(sc);
+                double discountPercent = getDiscountPercent(customerType, subtotal);
+                // Convert subtotal and discountPercent to BigDecimal
+                BigDecimal decimalDiscountPercent = new BigDecimal(discountPercent);
+                // Calculate discount amount
+                BigDecimal decimalSubTotal = new BigDecimal(subtotal);
+                BigDecimal discountAmount = decimalSubTotal.multiply(decimalDiscountPercent);
+                BigDecimal totalBeforeTax = decimalSubTotal.subtract(discountAmount);
+                BigDecimal salesTaxPercent = new BigDecimal(0.05);
+                BigDecimal salesTax = totalBeforeTax.multiply(salesTaxPercent);
+                BigDecimal total = totalBeforeTax.add(salesTax);
+                
+                printInvoice(decimalDiscountPercent, discountAmount, totalBeforeTax, salesTaxPercent, salesTax, total);
+                System.out.print("Continue? ");
+                choice = getChoice(sc);
+            }
         }
-        sc.close();
     }
 
     private static double getSubtotal(Scanner sc) {
