@@ -26,11 +26,9 @@ public class InvoiceAppEnhanced {
         while (choice.equalsIgnoreCase("y")) {
             String customerType = getCustomerType(sc);
             double subtotal = getSubtotal(sc);
-            double discountPercent = 0.0;
-            discountPercent = getDiscountPercent(customerType, subtotal);
+            double discountPercent = getDiscountPercent(customerType, subtotal);
             // Convert subtotal and discountPercent to BigDecimal
             BigDecimal decimalDiscountPercent = new BigDecimal(discountPercent);
-            System.out.println("Discount percent: " + decimalDiscountPercent);
             // Calculate discount amount
             BigDecimal decimalSubTotal = new BigDecimal(subtotal);
             BigDecimal discountAmount = decimalSubTotal.multiply(decimalDiscountPercent);
@@ -39,14 +37,11 @@ public class InvoiceAppEnhanced {
             BigDecimal salesTax = totalBeforeTax.multiply(salesTaxPercent);
             BigDecimal total = totalBeforeTax.add(salesTax);
 
-            NumberFormat currency = NumberFormat.getCurrencyInstance();
-            NumberFormat percent = NumberFormat.getPercentInstance();
-            printInvoice(discountAmount, totalBeforeTax, salesTaxPercent, salesTax, total, currency, percent);
+            printInvoice(decimalDiscountPercent, discountAmount, totalBeforeTax, salesTaxPercent, salesTax, total);
             System.out.print("Continue? ");
             choice = getChoice(sc);
         }
         sc.close();
-
     }
 
     private static double getSubtotal(Scanner sc) {
@@ -71,13 +66,17 @@ public class InvoiceAppEnhanced {
         return choice;
     }
 
-    private static void printInvoice(BigDecimal discountAmount, BigDecimal totalBeforeTax, BigDecimal salesTaxPercent,
-            BigDecimal salesTax, BigDecimal total, NumberFormat currency, NumberFormat percent) {
-        System.out.println("Discount amount: " + currency.format(discountAmount));
-        System.out.println("Total before tax: " + currency.format(totalBeforeTax));
+    private static void printInvoice(BigDecimal decimalDiscountPercent, BigDecimal discountAmount,
+            BigDecimal totalBeforeTax, BigDecimal salesTaxPercent,
+            BigDecimal salesTax, BigDecimal total) {
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        NumberFormat percent = NumberFormat.getPercentInstance();
+        System.out.println("Discount percent:  " + percent.format(decimalDiscountPercent));
+        System.out.println("Discount amount:   " + currency.format(discountAmount));
+        System.out.println("Total before tax:  " + currency.format(totalBeforeTax));
         System.out.println("Sales tax percent: " + percent.format(salesTaxPercent));
-        System.out.println("Sales tax: " + currency.format(salesTax));
-        System.out.println("Total: " + currency.format(total));
+        System.out.println("Sales tax:         " + currency.format(salesTax));
+        System.out.println("Total:             " + currency.format(total));
     }
 
     private static double getDiscountPercent(String customerType, double subtotal) {
