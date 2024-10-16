@@ -9,6 +9,33 @@ This repo consists of Java foundation explanations and examples. I have put a lo
 ## NumberFormat
 
 ## Integer and Double
+### Dos and Don'ts
+```javascript
+// Don't parseInt string
+Integer quantity = Integer.parseInt("123");
+// Do valueOf string
+Integer quantity = Integer.valueOf("123");
+
+// Don't Integer new int, it's deprecated
+Integer quantityIntegerObject = new Integer(123);
+// Do direct assignment int
+Integer quantityIntegerObject = 123;
+
+// Don't Double new double deprecated
+Double priceDoubleObject = new Double(123.45);
+// Do direct assignment double
+Double priceDoubleObject = 123.45;
+
+// Don't directly parse Integer/Double
+System.out.println("Double:" + Double.parseDouble("123.abc")); // throws NumberFormatException
+// Do enclose in try/catch, use appropriate Exception (checked) vs NumberFormatException (unchecked) exceptions, use valueOf instead to avoid unncessary boxing
+try {
+    System.out.println("Double:" + Double.valueOf("123.abc"));
+} catch (NumberFormatException e) {
+    System.out.println("Error: " + e); // Error: java.lang.NumberFormatException: For input string: "123.abc"
+}
+```
+
 
 ## Control structures
 ### switch
