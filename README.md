@@ -4,6 +4,32 @@ This repo consists of Java foundation explanations and examples. I have put a lo
 
 ## Variables
 
+## static methods
+### syntax
+- access modifier (`public`/`private`)
+- static keyword
+- return type can be only one, however a colleciton type can be returned like array, Set etc.
+- method identifier
+- params and types within () separated by , if more than one like (int param1, double param2, String param3)
+- calling any method should follow it's signature, i.e., method name and params with their types `say("hello")`
+- `public` access modifier allows static method to be callable from other classes in their methods
+- paramets are optional and in that case keep () empty
+```java
+public|private static returnType methodName ([parameterList]) {
+    statements
+}
+// Example with a class
+class TestBed { // class identifier is TitleCase
+    public static void main(String[] args){
+        System.out.println("getIntOne returns: " +getInt(1)); // called statement method within the class
+    }
+
+    private static int getIntOne(int num) { // a private static method declared name is in camelCase
+        return num;
+    }
+}
+```
+
 ## Constants
 
 ## NumberFormat
