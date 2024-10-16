@@ -43,18 +43,16 @@ public class Lesson9 {
         System.out.println("Two static methods of Integer class");
 
         stringToInteger();
-
         integerToString();
 
         System.out.println("Two static methods of Double class");
 
-        doubleToDouble();
-
         stringToDouble();
+        doubleToString();
 
     }
 
-    private static void doubleToDouble() {
+    private static void doubleToString() {
         System.out.println("Double to String class");
         double quantity5 = 123.45;
         String quantity5String = Double.toString(quantity5); // "123.45"
@@ -67,6 +65,11 @@ public class Lesson9 {
         System.out.println("Double:" + price);
         double price2 = Double.parseDouble("123.45"); // 123.45
         System.out.println("Double:" + price2);
+        try {
+            System.out.println("Double:" + Double.valueOf("123.abc"));
+        } catch (NumberFormatException e) {
+            System.out.println("Error: " + e);
+        }
     }
 
     private static void integerToString() {
@@ -77,9 +80,10 @@ public class Lesson9 {
 
     private static void getPriceDoubleObjectConstructor() {
         System.out.println("Constructor usage - deprecated");
-        @SuppressWarnings({"BoxedPrimitiveConstruction"})
+        // Integer quantityIntegerObject = new Integer(123); // deprecated
         Integer quantityIntegerObject = 123;
         System.out.println("quantityIntegerObject: " + quantityIntegerObject);
+        // Double priceDoubleObject = new Double(123.45); // deprecated
         Double priceDoubleObject = 123.45;
         System.out.println("priceDoubleObject: " + priceDoubleObject);
     }
