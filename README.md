@@ -51,8 +51,15 @@ try(Scanner sc = new Scanner(System.in)) {
      ...
     }
 }
-```
 
+// Don't use complicated string concatenations
+String debugString = "Unformatted: \n" + "Subtotal: " + subtotal + "\n";
+// Do use Java text blocks to make it more readable
+String debugString = """
+    Unformatted:
+    Subtotal: """ + subtotal + "\n";
+```
+Ref: [JavaTextBlock](https://www.baeldung.com/java-text-blocks#:~:text=Since%20Java%2015%2C%20text%20blocks%20are%20available%20as,this%3A%20String%20example%20%3D%20%22%22%22%20Example%20text%22%22%22%3B%20Copy)
 
 ## Control structures
 ### switch
