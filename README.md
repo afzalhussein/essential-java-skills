@@ -121,6 +121,63 @@ for(initializeExpression; booleanExpression; incrementDecrementExpression) { // 
 }
 ```
 
+### break and continue statements
+#### continue
+- continue and continue labeled work similarly to break statement, but they jump to the beginning of a loop instead of the end of the loop.
+- The unlabeled version of the statement works with the current loop, and labeled version to work with nested loops.
+```java
+// syntax
+label:
+loop declaration {
+    statements
+    another loop declaration {
+        statements
+        if(conditionalExpression) {
+            statements
+            continue label;
+        }
+    }
+}
+// example
+ouer:
+for(int i = 2; i<20; i++) {
+    for( int j =2; j<i-1;j++){
+        int remainder = i%j;
+        if(remainder == 0) {
+            continue outer;
+        }
+    }
+}
+
+// continue usage - for loop
+for(int i=0; i<25; i++) {
+    if(i%2==0) continue;// goes on to next iteration at the beginning of iteration
+    System.out.println(i);
+}
+
+// continue usage - while loop
+int i=0;
+while (i<100) {
+    if(i%2) continue // continue to next iteration without print or increment, an infinite loop may incur or can be moved under increment with print
+    System.out.println(i);
+    i++;
+}
+```
+#### break
+- To jump to the end of the current loop, you can use the break statement
+- To jump to the end of an outer loop from an inner loop, you can label teh outerloop and use the labeled break statement. To code a label, type the name of the label and colon before a loop.
+```java
+// Same goes for do {} while()
+
+// break usage
+labelOuter: // can be any label name
+while (true) {
+    break labelOuter; // breaks the loop and control transfers to line following ending } or line following labelOuter (label name)
+}
+System.out.println("Ended by the break!");
+// break exits the current loop and can transfer control to outer loop or context
+```
+
 ### switch
 #### Old
 ```java
